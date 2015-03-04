@@ -3,6 +3,8 @@ package org.robospock.dagger2unittests;
 import android.app.Activity;
 import android.os.Bundle;
 
+import org.robospock.dagger2unittests.inject.Injector;
+
 import javax.inject.Inject;
 
 
@@ -16,7 +18,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerApplication.component(this).inject(this);
+        Injector.get().inject(this);
 
         toaster.makeToast(true);
     }

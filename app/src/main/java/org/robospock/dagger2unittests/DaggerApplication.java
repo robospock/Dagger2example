@@ -1,13 +1,10 @@
 package org.robospock.dagger2unittests;
 
 import android.app.Application;
-import android.content.Context;
 
-import org.robospock.dagger2unittests.inject.AppComponent;
+import org.robospock.dagger2unittests.inject.Injector;
 
 public class DaggerApplication extends Application {
-
-    private AppComponent component;
 
     @Override
     public void onCreate() {
@@ -16,10 +13,7 @@ public class DaggerApplication extends Application {
     }
 
     public void buildComponentAndInject() {
-        component = AppComponent.Initializer.init(this);
+        Injector.init(this);
     }
 
-    public static AppComponent component(Context context) {
-        return ((DaggerApplication) context.getApplicationContext()).component;
-    }
 }
