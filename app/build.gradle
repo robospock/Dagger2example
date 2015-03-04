@@ -1,6 +1,7 @@
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'org.robolectric'
 
 android {
     compileSdkVersion 21
@@ -9,7 +10,7 @@ android {
     defaultConfig {
         applicationId "org.robospock.dagger2unittests"
         minSdkVersion 15
-        targetSdkVersion 21
+        targetSdkVersion 16
         versionCode 1
         versionName "1.0"
     }
@@ -23,10 +24,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
 
     compile 'com.google.dagger:dagger:2.0-SNAPSHOT'
     apt "com.google.dagger:dagger-compiler:2.0-SNAPSHOT"
 
     provided 'javax.annotation:jsr250-api:1.0'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:2.4'
+    testCompile 'org.easytesting:fest-assert:1.4'
 }
