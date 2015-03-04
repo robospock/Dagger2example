@@ -22,7 +22,7 @@ public class ToasterModule {
     }
 
     @Provides
-    Toaster provideToaster(Context context){
+    public Toaster provideToaster(Context context){
         return new Toaster(context);
     }
 

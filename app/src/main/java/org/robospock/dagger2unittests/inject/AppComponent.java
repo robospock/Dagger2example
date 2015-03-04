@@ -15,9 +15,9 @@ public interface AppComponent {
 
     public final static class Initializer {
 
-        public static AppComponent init(Context context) {
+        public static AppComponent init(ToasterModule toasterModule) {
             return Dagger_AppComponent.builder()
-                    .toasterModule(new ToasterModule(context))
+                    .toasterModule(toasterModule)
                     .build();
         }
     }

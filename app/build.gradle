@@ -33,4 +33,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:2.4'
     testCompile 'org.easytesting:fest-assert:1.4'
+    testCompile 'org.mockito:mockito-all:1.9.5'
 }
